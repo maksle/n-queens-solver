@@ -4,8 +4,7 @@ from .puzzle import num_queens_attacked, queen_attacks, perturb, random_board, \
     hill_climb, print_board
 
 
-def parallel_search():
-    n = 128 # board edge size
+def local_beam_search(n=8):
     nb_procs = 4
     procs = []
     task_q = Queue()

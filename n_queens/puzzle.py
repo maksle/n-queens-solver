@@ -1,3 +1,7 @@
+import operator
+import random
+
+
 def update_attacks(x, y, n, squares, fn=operator.add):
     """Update attacks, either removing or adding the attacks from a queen in the
     x, y position. Note x and y are transposed from their typical meaning."""
@@ -84,6 +88,7 @@ import os
 def hill_climb(input, output):
     """Finds an n-queens solution"""
     for s in iter(input.get, 'STOP'):
+        n = len(s)
         attacks = queen_attacks(s)
         for i in range(300):
             if num_queens_attacked(s, attacks) == 0:
